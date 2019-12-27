@@ -1,0 +1,15 @@
+body{
+
+}
+.img100{
+    width: 100%;display:block;
+}
+.pop {
+    position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.7);z-index: 8;
+    .pop-content {
+        position: absolute;transform: translate(-50%, -50%);left: 50%;top: 50%;
+        .close-btn {
+            position: absolute;right: 0;top: 0;width: 101px;height: 101px;z-index: 2;
+        }
+    }
+}

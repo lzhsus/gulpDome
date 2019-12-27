@@ -1,0 +1,10 @@
+@function px2rem($px, $base-font-size: 75) {
+  @return round(($px / $base-font-size)*100)/100 * 1rem;
+}
+@mixin input-placeholder {
+	&.placeholder { @content; }
+	&:-moz-placeholder { @content; }
+	&::-moz-placeholder { @content; }
+	&:-ms-input-placeholder { @content; }
+	&::-webkit-input-placeholder { @content; } 
+}
