@@ -165,6 +165,8 @@ var plugins = [
     // }),
     // 使用 ProvidePlugin 加载使用率高的依赖库
     new webpack.ProvidePlugin({
+        $: 'jquery',
+        createjs: 'src/vendor/createjs/createjs.min.js',
         vueApp: 'src/app'
     })
 ]
@@ -188,6 +190,7 @@ module.exports = {
             assets: path.resolve(__dirname, '../src/assets'),
             '@': path.resolve(__dirname, '../'),
             static: path.resolve(__dirname, '../static'),
+            vendor: path.resolve(__dirname, '../src/vendor')
         }
     },
     externals: ['.js', '.vue', '.json'],

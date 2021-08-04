@@ -1,14 +1,14 @@
 import Vue from 'vue'
-import 'vant/lib/vant-css/index.css';
 // 引入固定资产
 require('assets/scss/function.scss')
 
 
-import Toast from 'path/to/@vant/weapp/dist/toast/toast';
 
 
-
-export { Toast }
+/**
+ * 事件管理中心
+ */
+export const globalDispatcher = new Vue();
 
 
 export function pageInit(app, data = {}) {

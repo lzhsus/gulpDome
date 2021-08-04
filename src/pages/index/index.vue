@@ -1,42 +1,45 @@
 <template>
     <div>
-        index+{{a}}asdfasdffasdasdf
-        <div class="img-box">
-
-        </div>
-        <div class="box-box">
-            222229999999555555asdfsadfasdfadsf
-            <div class="box-2">11asdfsadf11</div>
-        </div>
+        <canvas></canvas>
     </div>
 </template>
 
 <script>
+import { getHaibao } from '../../servers/haibao'
+	import flash from "../../flash/config";
 export default {
     data(){
         return{
             a:11111
         }
+    },
+    methods:{
+        getHaibaoFunc(){
+            var data={
+				nickname:"2018",
+				main_url:"http://190202fg0371demo.jdytoy.com/html/campaign/newYear/static/images/haibao/haibao-img-1.png",
+				head:"http://190202fg0371demo.jdytoy.com/html/campaign/newYear/static/images/haibao/creat_haibao-bg-2.png?v=100",
+				qr_code:"http://190202fg0371demo.jdytoy.com/html/campaign/newYear/static/images/haibao/creat_haibao-bg-2.png?v=100",
+				haibao_bg:"http://190202fg0371demo.jdytoy.com/html/campaign/newYear/static/images/haibao/creat_haibao-bg-2.png?v=100"
+			}
+			var element = $('#haibaoCanvas')[0];
+			console.log('--------',element)
+			data.element =  $('#haibaoCanvas')[0];
+			
+			var img = getHaibao(data,res=>{
+                console.log(res)
+            })
+        }
+    },
+    mounted(){
+        // this.getHaibaoFunc()
+        flash()
     }
-}
+} 
 </script>
 
 <style lang="less" scoped>
 
-    .img-box{
-        width: 500px;height: 400px;
-        background: url("~@/static/images/index/index-bg.jpg") center center no-repeat;
-        background-size: cover;
-    }
-    .box-box{
-        width: 500px;height: 300px;
-        border:1px solid red;
-        font-size: 20px;color: #000;
-        .box-2{
-            width: 100%;
-            text-align: center;
-            font-size:12px;color: red;
-        }
-    }
+    
 </style>
 
